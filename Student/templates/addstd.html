@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}Add New Student {% endblock %}
+
+{% block content %}
+
+    <!-- Page -->
+	<section class="contact-page spad pb-0">
+		<div class="container"> 
+			<div class="row">
+				<div class="col-lg-8">
+					<div class="contact-form-warp">
+						<div class="section-title text-white text-left">
+							<h2>Register New Account</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. </p>
+						</div>
+						<form class="contact-form">
+							{% csrf_token %}
+							<input type="number" placeholder="Roll">
+							<input type="text" placeholder="Name">
+							<label for="class">Choose a Class:</label>
+
+							<select name="sclass" id="class">
+							  <option value="VI">VI</option>
+							  <option value="VII">VII</option>
+						
+							</select> 
+							<label for="class">Choose a Class:</label>
+							<select name="ssection" id="section">
+								<option value="P">P</option>
+								<option value="Q">Q</option>
+							  </select> 
+							
+							<input type="tel" placeholder="Phone" name="sphone"> 
+							<input type="text" placeholder="Present Address" name="pradress">
+							<input type="text" placeholder="Parmanent Address" name="pmadress">
+		
+							<button class="site-btn">SaveInfo</button>
+						</form>
+					</div>
+				</div>
+				
+				
+			</div>
+		
+		</div>
+	</section>
+	<!-- Page end -->
+
+{% endblock %}

@@ -10,6 +10,8 @@ from django.urls.conf import path
 urlpatterns= [
      path('admin/', admin.site.urls),  
     path('std', views.std),  
-    path('show',views.show), 
-     path("", views.home, name="home"),
+    path('show',views.show, name="show"), 
+     path("", views.home),
+     path("absent/",views.absent),
+     path("base",views.base),
     ]

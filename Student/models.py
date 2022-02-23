@@ -1,3 +1,6 @@
+
+from datetime import date
+from operator import mod
 from django.db import models
 
 
@@ -15,7 +18,12 @@ class Student(models.Model):
         ('q', 'Q'),
     )
     ssection = models.CharField(max_length=1, choices=SECTION_CHOICES)
+    sabsent=models.IntegerField(default=0)
     sphone= models.CharField(max_length=11)
     pradress= models.CharField(max_length=20)
     pmadress= models.CharField(max_length=20)
+
+class AbsentDate(models.Model):
+    absdate= models.DateField()
+    abstudent=models.ForeignKey(Student, on_delete=models.CASCADE)   
     

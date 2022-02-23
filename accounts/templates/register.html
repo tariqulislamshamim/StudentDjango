@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Create an Account{% endblock %}
+
+
+{% block content %}
+
+    <!-- Page -->
+	<section class="contact-page spad pb-0">
+		<div class="container"> 
+			<div class="row">
+				<div class="col-lg-8">
+					<div class="contact-form-warp">
+						<div class="section-title text-white text-left">
+							<h2>Register New Account</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. </p>
+						</div>
+						<form class="contact-form">
+							{% csrf_token %}
+							<input type="text" placeholder="Username">
+							<input type="text" placeholder="Your E-mail">
+							<input type="text" placeholder="Password">
+							<input type="text" placeholder="Re-Enter Password">
+		
+							<button class="site-btn">Register</button>
+						</form>
+					</div>
+				</div>
+				
+				
+			</div>
+		
+		</div>
+	</section>
+	<!-- Page end -->
+
+{% endblock %}
