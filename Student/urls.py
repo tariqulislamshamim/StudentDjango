@@ -9,9 +9,9 @@ from django.urls.conf import path
 
 urlpatterns= [
      path('admin/', admin.site.urls),  
-    path('std', views.std),  
+    path('std', views.std, name='addstd'),  
     path('show',views.show, name="show"), 
      path("", views.home),
-     path("absent/",views.absent),
+     path("absent/",views.absent,name='absent'),
      path("base",views.base),
     ]

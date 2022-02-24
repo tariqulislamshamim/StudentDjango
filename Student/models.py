@@ -6,20 +6,12 @@ from django.db import models
 
 # Create your models here.
 class Student(models.Model):
-    sroll= models.IntegerField(max_length=2)
+    sroll= models.IntegerField(max_length=2, unique=True)
     sname= models.CharField(max_length=20)
-    CLASS_CHOICES = (
-        ('6', 'VI'),
-        ('7', 'VII'),
-    )
-    sclass = models.CharField(max_length=1, choices=CLASS_CHOICES)
-    SECTION_CHOICES = (
-        ('p', 'P'),
-        ('q', 'Q'),
-    )
-    ssection = models.CharField(max_length=1, choices=SECTION_CHOICES)
-    sabsent=models.IntegerField(default=0)
-    sphone= models.CharField(max_length=11)
+    sclass = models.CharField(max_length=4)
+    ssection = models.CharField(max_length=1)
+    sabsent=models.IntegerField(blank=True, default=0)
+    sphone= models.CharField(max_length=11, unique=True)
     pradress= models.CharField(max_length=20)
     pmadress= models.CharField(max_length=20)
 

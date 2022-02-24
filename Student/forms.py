@@ -13,6 +13,6 @@ class StudentForm(forms.ModelForm):
         fields = "__all__"
         
 class AbsentForm(forms.Form):
-    adate= forms.DateField()
+    absdate= forms.DateField()
     absentroll=forms.CharField()
 

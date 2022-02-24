@@ -3,47 +3,87 @@
 
 {% block content %}
 
-    <!-- Page -->
-	<section class="contact-page spad pb-0">
-		<div class="container"> 
-			<div class="row">
-				<div class="col-lg-8">
-					<div class="contact-form-warp">
-						<div class="section-title text-white text-left">
-							<h2>Register New Account</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. </p>
-						</div>
-						<form class="contact-form">
-							{% csrf_token %}
-							<input type="number" placeholder="Roll">
-							<input type="text" placeholder="Name">
-							<label for="class">Choose a Class:</label>
+<div class="content">
+    
+    <div class="container">
 
-							<select name="sclass" id="class">
-							  <option value="VI">VI</option>
-							  <option value="VII">VII</option>
-						
-							</select> 
-							<label for="class">Choose a Class:</label>
-							<select name="ssection" id="section">
-								<option value="P">P</option>
-								<option value="Q">Q</option>
-							  </select> 
-							
-							<input type="tel" placeholder="Phone" name="sphone"> 
-							<input type="text" placeholder="Present Address" name="pradress">
-							<input type="text" placeholder="Parmanent Address" name="pmadress">
-		
-							<button class="site-btn">SaveInfo</button>
-						</form>
-					</div>
-				</div>
-				
-				
-			</div>
-		
-		</div>
-	</section>
-	<!-- Page end -->
+        <div class="col-lg-6">
+			
+          <div class="contact-form-warp">
+            <h3 class="heading">Register New Student</h3>
+            <form class="mb-5" method="post" id="contactForm" action='std'>
+				{% csrf_token %}
+              <div class="row">
+                
+                <div class="col-md-6 form-group">
+                  <label for="sname" class="col-form-label">Name *</label>
+                  <input type="text" class="form-control" name="sname" id="name" placeholder="Student name">
+                </div>
+                <div class="col-md-6 form-group">
+                  <label for="sroll" class="col-form-label">Roll</label>
+                  <input type="number" class="form-control" name="sroll" id="organization" placeholder="Student Roll">
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-6 form-group">
+                  <label for="sclass" class="col-form-label">Class</label>
+                  <select class="custom-select" id="budget" name="sclass">
+    <option selected>Choose...</option>
+    <option value="VI"> VI</option>
+    <option value="VII">VII</option>
+    <option value="VIII">VIII</option>
+    <option value="IX">IX</option>
+    <option value="X">X</option>
+  </select>
+                </div>
+                <div class="col-md-6 form-group">
+					<label for="ssection" class="col-form-label">Section</label>
+					<select class="custom-select" id="budget" name="ssection">
+	  <option selected>Choose...</option>
+	  <option value="P"> P</option>
+	  <option value="Q">Q</option>
+	  <option value="J">J</option>
+	  <option value="K">K</option>
+	  <option value="L">L</option>
+	</select>
+                </div>
+              </div>
 
+			  <div class="row">
+                <div class="col-md-12 form-group">
+					<p>
+                  <label for="sphone" class="col-form-label">Phone *</label></p>
+                  <input type="tel" class="form-control" name="sphone" id="phone" placeholder="Your Phone Number">
+                </div>
+              </div>
+			 
+			  <div class="row">
+                <div class="col-md-12 form-group">
+					<p>
+                  <label for="pradress" class="col-form-label">Parmanent Address *</label></p>
+                  <input type="text" class="form-control" name="pradress" id="tel" placeholder="Your Present Address">
+                </div>
+              </div>
+
+			  <div class="row">
+                <div class="col-md-12 form-group">
+					<p>
+                  <label for="pmadress" class="col-form-label">Present Address *</label></p>
+                  <input type="text" class="form-control" name="pmadress" id="tel" placeholder="Your Parmanent Address">
+                </div>
+              </div>
+
+
+              <div class="row">
+                <div class="col-md-12">
+					<button class="site-btn btn-dark">Submit Info</button>
+                </div>
+              </div>
+            </form>
+
+           
+          </div>
+        </div>
+      </div>
+  </div>
 {% endblock %}

@@ -46,7 +46,6 @@
 				</div>
 				<div class="col-lg-9 col-md-9">
 					{% if user.is_authenticated %}
-					Hi {{user.Username}}
 					<a href="" class="site-btn header-btn">Logout</a>
 					{% else %}
 					<a href="" class="site-btn header-btn">Login</a>
@@ -54,9 +53,9 @@
 					<nav class="main-menu">
 						<ul>
 							<li><a href="index.html">Home</a></li>
-							<li><a href="#">About us</a></li>
-							<li><a href="courses.html">Courses</a></li>
-							<li><a href="blog.html">News</a></li>
+							<li><a href={% url 'addstd' %}>Add Student</a></li>
+							<li><a href="{% url 'absent' %}">Input Absent</a></li>
+							<li><a href="{% url 'show' %}">Students List</a></li>
 							<li><a href="contact.html">Contact</a></li>
 						</ul>
 					</nav>

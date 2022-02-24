@@ -16,6 +16,7 @@ def std(request):
         if form.is_valid():
             try:
                 form.save()
+                print("Hello")
                 return redirect('show')
             except:
                 pass
@@ -25,7 +26,10 @@ def std(request):
 def absent(request):
     if request.method=="POST":
         form= AbsentForm(request.POST) 
+        for i in form:
+            print(i)
         if form.is_valid():
+            
             str= form.cleaned_data['absentroll']
             list1=re.findall(r"[\w']+", str)
             list1 = list(map(int, list1))
@@ -35,7 +39,7 @@ def absent(request):
                     std=Student.objects.get(sroll=i)
                     std.sabsent+=1
                     std.save(update_fields=['sabsent'])
-                    dateob= AbsentDate(absdate=form.cleaned_data['adate'],abstudent=std)
+                    dateob= AbsentDate(absdate=form.cleaned_data['absdate'],abstudent=std)
                     dateob.save()     
             except:
                 pass

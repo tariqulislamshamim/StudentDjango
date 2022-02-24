@@ -1,23 +1,45 @@
-<!DOCTYPE html>
-<html>
-    <body>
-        <table>
-            <tr>
-                <th>Student Roll</th>
-                <th>Student Name</th>
-                <th>Phone</th>
-            </tr>
-            {%for i in student%}
-            <tr>
-                <td>{{i.sroll}}</td>
-                <td>{{i.sname}}</td>
-                <td>{{i.sphone}}</td>
-            </tr>
-            {% endfor %}
-            <br>
-            Now 
-        
-        </table>
-    </body>
-</html>
 
+
+
+{% extends "base.html" %}
+{% block title %}Student List {% endblock %}
+    {% block content %}
+
+
+<div class="limiter">
+    <div class="container-table100">
+        <div class="wrap-table100">
+            <div class="table100">
+                <table>
+                    <thead>
+                        <tr class="table100-head">
+                            <th class="column1">Student Roll</th>
+                            <th class="column2">Student Name</th>
+                            <th class="column3">Phone</th>
+                            <th class="column4">Class</th>
+                            <th class="column5">Section</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        
+            
+               {%for i in student%}
+                            <tr>
+                                <td class="column1">{{i.sroll}}</td>
+                                <td class="column2">{{i.sname}}</td>
+                                <td class="column3">{{i.sphone}}</td>
+                                <td class="column4">{{i.sclass}}</td>
+                                <td class="column5">{{i.ssection}}</td>
+                                
+                            </tr>
+                            {% endfor %}
+                            
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

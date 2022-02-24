@@ -1,13 +1,26 @@
-<!DOCTYPE html>
-<html>
-    <head>
-    </head>
-    <body>
-        <form method="POST">
-            {% csrf_token %}
-            <h3>Enter Details</h3> 
-            {{ form.as_p }}  
-            <button>Submit</button>
-        </form>
-
-    </head>
+{% extends "base.html" %}
+{% block title %}Absent Input {% endblock %}
+{% block content %}
+<!-- search section -->
+<section class="search-section ss-other-page">
+  <div class="container">
+    <div class="search-warp">
+      <div class="section-title text-white">
+        <h2><span>Absent Input</span></h2>
+      </div>
+      <div class="row">
+        <div class="col-lg-10 offset-lg-1">
+          <!-- search form -->
+          <form class="course-search-form" method="post" action={% url 'absent' %}>
+                  {% csrf_token %}
+                <input type="date" placeholder="Date"   name= 'absdate'>
+            <input type="text"  placeholder="Absent Roll" name='absentroll'>
+            <button class="site-btn btn-dark">Absent Input</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+<!-- search section end -->
