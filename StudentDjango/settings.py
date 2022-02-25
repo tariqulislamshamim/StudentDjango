@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-wp%li&8!a1d*ug^=a3^*qta-3c8x%uh=x)et)6k30s_wc88unn'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['acpsattendance.herokuapp.com', 'localhost', '127.0.0.1']
 
@@ -133,6 +133,7 @@ STATIC_ROOT = os.path.join(PROJECT_DIR, 'static/student')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 

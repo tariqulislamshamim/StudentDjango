@@ -13,4 +13,5 @@ urlpatterns= [
      path("", views.home, name="home"),
      path("absent/",views.absent,name='absent'),
      path("base",views.base),
+     path('common',views.common, name="common"),
     ]

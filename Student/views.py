@@ -1,9 +1,13 @@
 from datetime import date, datetime
 import re
+from typing import List
 from django.shortcuts import redirect, render
 from django.http.response import HttpResponse
 from Student.forms import AbsentForm, StudentForm
 from Student.models import AbsentDate, Student
+
+
+from django.contrib.auth.decorators import login_required
 
 
 
@@ -16,13 +20,14 @@ def std(request):
         if form.is_valid():
             try:
                 form.save()
-                print("Hello")
                 return redirect('show')
             except:
                 pass
     else:
         form=StudentForm()
     return render(request,'addstd.html',{'form':form})
+
+@login_required(login_url='login')
 def absent(request):
     if request.method=="POST":
         form= AbsentForm(request.POST) 
@@ -40,14 +45,20 @@ def absent(request):
                     std.sabsent+=1
                     std.save(update_fields=['sabsent'])
                     dateob= AbsentDate(absdate=form.cleaned_data['absdate'],abstudent=std)
-                    dateob.save()     
+                    dateob.save()  
+                    return redirect('show')   
             except:
                 pass
     else:
         form=AbsentForm()
     return render(request,'absent.html',{'form':form})
+
 def show(request):  
     student = Student.objects.all()  
     return render(request,"show.html",{'student':student})
+
 def base(request):
     return render(request,'base.html')
+
+def common(request):
+    return render(request,'common.html')
