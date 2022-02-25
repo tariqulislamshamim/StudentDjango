@@ -132,3 +132,5 @@ STATIC_ROOT = os.path.join(PROJECT_DIR, 'static/student')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = '/'
+
+
