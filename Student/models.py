@@ -1,6 +1,5 @@
 
 from datetime import date
-from operator import mod
 from django.db import models
 
 
@@ -14,6 +13,8 @@ class Student(models.Model):
     sphone= models.CharField(max_length=11, unique=True)
     pradress= models.CharField(max_length=20)
     pmadress= models.CharField(max_length=20)
+    class Meta:
+        ordering = ['sroll']
 
 class AbsentDate(models.Model):
     absdate= models.DateField()
