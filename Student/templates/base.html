@@ -52,8 +52,8 @@
 					{% endif %}
 					<nav class="main-menu">
 						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href={% url 'addstd' %}>Add Student</a></li>
+							<li><a href="{% url 'home' %}">Home</a></li>
+							<li><a href="{% url 'addstd' %}">Add Student</a></li>
 							<li><a href="{% url 'absent' %}">Input Absent</a></li>
 							<li><a href="{% url 'show' %}">Students List</a></li>
 							<li><a href="contact.html">Contact</a></li>
