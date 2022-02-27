@@ -82,10 +82,10 @@ WSGI_APPLICATION = 'StudentDjango.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'student',                     
-        'USER': 'shamim',
-        'PASSWORD': '123',
-        'HOST': 'localhost',                      # Empty for localhost through domain sockets or           '127.0.0.1' for localhost through TCP.
+        'NAME': 'd4i04v1p67mr1u',                     
+        'USER': 'ikizcxuiaksxrc',
+        'PASSWORD': 'f90382c4c63ed2c43f8ae744ce73ba4aead2a017ea124a9bd4b64e68ea490d82',
+        'HOST': 'ec2-35-175-68-90.compute-1.amazonaws.com',                      # Empty for localhost through domain sockets or           '127.0.0.1' for localhost through TCP.
         'PORT': '5432',                      # Set to empty string for default.
     }
 }
