@@ -14,5 +14,7 @@ class StudentForm(forms.ModelForm):
         
 class AbsentForm(forms.Form):
     absdate= forms.DateField()
-    absentroll=forms.CharField()
-
+    period1=forms.CharField()
+    period2=forms.CharField()
+    period3=forms.CharField()
+ 

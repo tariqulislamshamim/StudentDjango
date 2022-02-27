@@ -3,7 +3,7 @@ import re
 from typing import List
 from django.shortcuts import redirect, render
 from django.http.response import HttpResponse
-from Student.forms import AbsentForm, StudentForm
+from Student.forms import AbsentForm,  StudentForm
 from Student.models import AbsentDate, Student
 
 
@@ -31,22 +31,21 @@ def std(request):
 def absent(request):
     if request.method=="POST":
         form= AbsentForm(request.POST) 
-        for i in form:
-            print(i)
         if form.is_valid():
-            
-            str= form.cleaned_data['absentroll']
+            str1= form.cleaned_data['period1']
+            str2= form.cleaned_data['period2']
+            str3= form.cleaned_data['period3']
+            str= str1+','+str2+','+str3
             list1=re.findall(r"[\w']+", str)
             list1 = list(map(int, list1))
             try:
                 for i in list1:
-                    print(i)
                     std=Student.objects.get(sroll=i)
                     std.sabsent+=1
                     std.save(update_fields=['sabsent'])
                     dateob= AbsentDate(absdate=form.cleaned_data['absdate'],abstudent=std)
                     dateob.save()  
-                    return redirect('show')   
+                return redirect('show')   
             except:
                 pass
     else:
@@ -62,3 +61,8 @@ def base(request):
 
 def common(request):
     return render(request,'common.html')
+def test(request):
+    if request.method=="POST":
+        list1 = request.POST.get('mytext')
+        print(list1)
+    return render(request,'test.html')

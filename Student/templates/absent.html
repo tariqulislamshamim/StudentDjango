@@ -2,25 +2,59 @@
 {% block title %}Absent Input {% endblock %}
 {% block content %}
 <!-- search section -->
-<section class="search-section ss-other-page">
+<div class="content">
+    
   <div class="container">
-    <div class="search-warp">
-      <div class="section-title text-white">
-        <h2><span>Absent Input</span></h2>
-      </div>
-      <div class="row">
-        <div class="col-lg-10 offset-lg-1">
-          <!-- search form -->
-          <form class="course-search-form" method="post" action={% url 'absent' %}>
+
+      <div class="col-lg-6">
+    
+        <div class="contact-form-warp">
+          <h3 class="heading">Absent Input</h3>
+          </div>
+         
+          
+          <form class="mb-5" method="post" action={% url 'absent' %}>
                   {% csrf_token %}
-                <input type="date" placeholder="Date"   name= 'absdate'>
-            <input type="text"  placeholder="Absent Roll" name='absentroll'>
-            <button class="site-btn btn-dark">Absent Input</button>
+                  <div class="row">
+                    <div class="col-md-12 form-group">
+              <p>
+                      <label for="absdate" class="col-form-label">Date *</label></p>
+                      <input type="date" class="form-control" name="absdate" id="absdat" placeholder="Date">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 form-group">
+              <p>
+                      <label for="period1" class="col-form-label">Absent Roll of 1st Period *</label></p>
+                      <input type="text" class="form-control" name="period1" id="period1" placeholder="Absent Roll of 1st Period">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 form-group">
+              <p>
+                      <label for="period2" class="col-form-label">Absent Roll of 2nd Period *</label></p>
+                      <input type="text" class="form-control" name="period2" id="period2" placeholder="Absent Roll of 2nd Period">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 form-group">
+              <p>
+                      <label for="period3" class="col-form-label">Absent Roll of 3rd Period *</label></p>
+                      <input type="text" class="form-control" name="period3" id="period3" placeholder="Absent Roll of 3rd Period">
+                    </div>
+                  </div>
+                  
+            
+                  <div class="row">
+                    <div class="col-md-12">
+              <button class="site-btn btn-dark">Submit Absent</button>
+                    </div>
+                  </div>
           </form>
         </div>
       </div>
+  
     </div>
-  </div>
-</section>
-{% endblock %}
+	</section>
 <!-- search section end -->
+{% endblock %}
