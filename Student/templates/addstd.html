@@ -12,6 +12,7 @@
           <div class="contact-form-warp">
             <h3 class="heading">Register New Student</h3>
             <form class="mb-5" method="post" id="contactForm" action='std'>
+<fieldset disabled="disabled">
 				{% csrf_token %}
               <div class="row">
                 
@@ -85,6 +86,7 @@
 {% endif %}
                 </div>
               </div>
+            </fieldset>
             </form>
 
            
